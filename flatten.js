@@ -1,15 +1,16 @@
-const assertArraysEqual = function(actuals, expected) {
+const assertArraysEqual = function(actual, expected) {
+  let output = true;
   for (let i = 0; i < expected.length; i++) {
-    if (expected[i] !== actuals[i] || expected.length !== actuals.length) {
-      return `🥲Assertion Passed: ${actuals} !== ${expected}`;
+    if (expected[i] !== actual[i] || expected.length !== actual.length) {
+      output = false; break;
     }
   }
-  return `😁😁😁Assertion Passed: ${actuals} === ${expected}`;
+  output === true ? console.log(`😁😁😁Assertion Passed: ${actual} === ${expected}`) : console.log(`🥲Assertion Not Passed: ${actual} !== ${expected}`);
 };
 
-const eqArrays = function(actuals, expected) {
+const eqArrays = function(actual, expected) {
   for (let i = 0; i < expected.length; i++) {
-    if (expected[i] !== actuals[i] || expected.length !== actuals.length) {
+    if (expected[i] !== actual[i] || expected.length !== actual.length) {
       return false;
     }
   }
@@ -30,4 +31,4 @@ const flatten = function(arrays) {
   return newArr;
 };
 
-console.log(flatten([1, 2, [3, 4], 5, [6]])) // => [1, 2, 3, 4, 5, 6]
+assertArraysEqual((flatten([1, 2, [3, 4], 5, [6]])), [1, 2, 3, 4, 5, 6]);

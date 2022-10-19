@@ -1,11 +1,11 @@
-const eqArrays = function(actuals, expected) {
+const assertArraysEqual = function(actual, expected) {
+  let output = true;
   for (let i = 0; i < expected.length; i++) {
-    if (expected[i] !== actuals[i] || expected.length !== actuals.length) {
-      return `🥲Assertion Passed: ${actuals} !== ${expected}`;
+    if (expected[i] !== actual[i] || expected.length !== actual.length) {
+      output = false; break;
     }
   }
-  return `😁😁😁Assertion Passed: ${actuals} === ${expected}`;
+  output === true ? console.log(`😁😁😁Assertion Passed: ${actual} === ${expected}`) : console.log(`🥲Assertion Not Passed: ${actual} !== ${expected}`);
 };
 
-
-console.log(eqArrays([1, 2, 3], [1, 3, 2]));
+assertArraysEqual([1, 2, 3], [1, 2, 3]);

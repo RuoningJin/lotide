@@ -3,9 +3,9 @@ const head = function(arr) {
 };
 const assertEqual = function(head, expected) {
   let output;
-  head === expected ? (output = `😁😁😁Assertion Passed: ${head} === ${expected}`) : (output = `🥲Assertion Passed: ${head} !== ${expected}`);
-  return output;
+  head === expected ? (output = `😁😁😁Assertion Passed: ${head} === ${expected}`) : (output = `🥲Assertion Not Passed: ${head} !== ${expected}`);
+  console.log(output);
 };
-console.log(assertEqual(head([56]), 5));
-console.log(assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello"));
+assertEqual(head([56]), 5);
+assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
 

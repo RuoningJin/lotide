@@ -1,6 +1,6 @@
-const eqArrays = function(actuals, expected) {
+const eqArrays = function(actual, expected) {
   for (let i = 0; i < expected.length; i++) {
-    if (expected[i] !== actuals[i] || expected.length !== actuals.length) {
+    if (expected[i] !== actual[i] || expected.length !== actual.length) {
       return false;
     }
   }
@@ -9,7 +9,7 @@ const eqArrays = function(actuals, expected) {
 
 const assertEqual = function(actual, expected) {
   let output;
-  actual === expected ? (output = `😁😁😁Assertion Passed: ${actual} === ${expected}`) : (output = `🥲Assertion Passed: ${actual} !== ${expected}`);
+  actual === expected ? (output = `😁😁😁Assertion Passed: ${actual} === ${expected}`) : (output = `🥲Assertion Not Passed: ${actual} !== ${expected}`);
   return output;
 };
 

@@ -1,18 +1,17 @@
-const tail = function(actual) {
-  let newA = [];
-  for (let i = 1; i < actual.length; i++) {
-    newA.push(actual[i]);
-  }
-  return newA;
-};
-
-const assertEqual = function(tail, expected) {
+const eqArrays = function(actual, expected) {
   for (let i = 0; i < expected.length; i++) {
-    if (tail[i] !== expected[i] || tail.length !== expected.length) {
-      return `🥲Assertion Passed: ${tail} !== ${expected}`;
+    if (expected[i] !== actual[i] || expected.length !== actual.length) {
+      return false;
     }
   }
-  return `😁Assertion Passed: ${tail} === ${expected}`;
+  return true;
 };
-const result = tail([]);
-console.log(assertEqual(result, ["Lighthouse", "Labs"])); // => will always fail!
+
+const assertEqual = function(actual, expected) {
+  let output;
+  actual === expected ? (output = `😁😁😁Assertion Passed: ${actual} === ${expected}`) : (output = `🥲Assertion Not Passed: ${actual} !== ${expected}`);
+  console.log(output);
+};
+
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
+
