@@ -16,12 +16,18 @@ const eqArrays = function(actuals, expected) {
   return true;
 };
 
-const without = function(source, itemsToRemove) {
-  let newWords = [];
-  for (let item of source) {
-    if (!itemsToRemove.includes(item)) {
-      newWords.push(item);
+const flatten = function(arrays) {
+  let newArr = [];
+  for (let array of arrays) {
+    if (Array.isArray(array)) {
+      for (let arr of array) {
+        newArr.push(arr);
+      }
+    } else {
+      newArr.push(array);
     }
   }
-  return newWords;
+  return newArr;
 };
+
+console.log(flatten([1, 2, [3, 4], 5, [6]])) // => [1, 2, 3, 4, 5, 6]
