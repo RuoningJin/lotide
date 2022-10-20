@@ -6,12 +6,13 @@ const assertEqual = function(actual, expected) {
 
 const countLetters = function(strings) {
   let output = {};
-
   for (const str of strings) {
-    if (output[str]) {
-      output[str] += 1;
-    } else {
-      output[str] = 1;
+    if (str !== ' ') {
+      if (output[str]) {
+        output[str] += 1;
+      } else {
+        output[str] = 1;
+      }
     }
   }
   console.log(output);
@@ -25,3 +26,4 @@ assertEqual(result1["l"], 1);
 assertEqual(result1["h"], 4);
 assertEqual(result1["e"], 3);
 assertEqual(result1["x"], undefined);
+assertEqual(result1[" "], undefined);
