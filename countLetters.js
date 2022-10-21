@@ -8,11 +8,10 @@ const countLetters = function(strings) {
   let output = {};
   for (const str of strings) {
     if (str !== ' ') {
-      if (output[str]) {
-        output[str] += 1;
-      } else {
-        output[str] = 1;
+      if (output[str] === undefined) {
+        output[str] = 0;
       }
+      output[str] += 1;
     }
   }
   console.log(output);

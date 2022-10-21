@@ -7,7 +7,6 @@ const assertEqual = function(actual, expected) {
 const findKey = (names, backcall) => {
   for (const name in names) {
     if (backcall(names[name])) {
-
       return name;
     }
   }

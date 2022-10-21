@@ -1,5 +1,5 @@
 const eqArrays = function(actual, expected) {
-  for (let i = 0; i < expected.length; i++) {
+  for (const i in actual) {
     if (expected[i] !== actual[i] || expected.length !== actual.length) {
       return false;
     }
