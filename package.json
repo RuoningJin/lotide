@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@ruoningjin/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "Handy functions to use",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/RuoningJin/lotide.git"
   },
-  "author": "",
+  "author": "Ruoning Jin",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/RuoningJin/lotide/issues"
