@@ -1,11 +1,10 @@
-const middle = function(array, expected) {
-  const assertArraysEqual = require('./assertArraysEqual');
+const middle = function(array) {
   
   let index = array.length / 2 - 1;
   let newArray = [];
 
   if (array.length < 3) {
-    return assertArraysEqual(newArray, expected);
+    return newArray;
   }
   if (array.length % 2 === 0) {
     newArray.push(array[index], array[index + 1]);
@@ -15,7 +14,7 @@ const middle = function(array, expected) {
     newArray.push(array[Math.ceil(index)]);
   }
 
-  return assertArraysEqual(newArray, expected);
+  return newArray;
 };
-
+console.log(middle([1, 2]));
 module.exports = middle;

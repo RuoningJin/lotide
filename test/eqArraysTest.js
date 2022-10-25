@@ -1,4 +1,15 @@
+const assert = require('chai').assert;
 const eqArrays = require('../eqArrays');
 
-console.log(eqArrays([1, 2, 3], [1, 2, 3])); // => should PASS
-console.log(eqArrays([1, 2, 3, 4], [1, 2, 3])); // => should PASS
+describe("#eqArrays", () => {
+  it("returns true if two arrays are identical", () => {
+    assert.strictEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+  });
+  it("returns false if two arrays have different length", () => {
+    assert.strictEqual(eqArrays([1, 2, 3, 4], [1, 2, 3]), false);
+  });
+  it("returns false if the arrays are not identical", () => {
+    assert.strictEqual(eqArrays([1, 2, 3, 4], [1, 2, 3, 6]), false);
+  });
+});
+
