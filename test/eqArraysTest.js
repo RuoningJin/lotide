@@ -11,5 +11,14 @@ describe("#eqArrays", () => {
   it("returns false if the arrays are not identical", () => {
     assert.strictEqual(eqArrays([1, 2, 3, 4], [1, 2, 3, 6]), false);
   });
+  it("returns true if the arrays are identical with arrays inside", () => {
+    assert.strictEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true);
+  });
+  it("returns false if the arrays are not identical with arrays inside", () => {
+    assert.strictEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false);
+  });
+  it("returns false if the arrays are not identical with arrays inside", () => {
+    assert.strictEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false);
+  });
 });
 
